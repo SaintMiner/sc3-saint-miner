@@ -5,21 +5,21 @@ local totalSteps = 1;
 local isEven = false;
 local level = 1;
 
-function dryWater()
+local function dryWater()
   turtle.place();
   turtle.dig();
   turtle.placeDown();
   turtle.digDown();
 end
 
-function doStep()
+local function doStep()
     dryWater();
     turtle.forward();
     totalSteps = totalSteps + 1;
     currentLevelStep = currentLevelStep + 1;
 end
 
-function nextLevel()
+local function nextLevel()
     for i = 1, 2 do
         dryWater();
         turtle.down();
@@ -27,7 +27,7 @@ function nextLevel()
     level = level + 1;
 end
 
-function getRotation(x, y)
+local function getRotation(x, y)
     local isBackloop = level % 2 == 0;
     print(isBackloop);
     if (isEven and isBackloop) then

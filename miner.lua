@@ -5,7 +5,7 @@ local totalSteps = 1;
 local isEven = false;
 local level = 1;
 
-function digBlocks()
+local function digBlocks()
     turtle.digUp();
     while turtle.detect() do
         turtle.dig();
@@ -13,14 +13,14 @@ function digBlocks()
     turtle.digDown();
 end
 
-function doStep()
+local function doStep()
     digBlocks();
     turtle.forward();
     totalSteps = totalSteps + 1;
     currentLevelStep = currentLevelStep + 1;
 end
 
-function nextLevel()
+local function nextLevel()
     for i = 1, 3 do
         digBlocks();
         turtle.down();
@@ -28,7 +28,7 @@ function nextLevel()
     level = level + 1;
 end
 
-function getRotation(x, y)
+local function getRotation(x, y)
     local isBackloop = level % 2 == 0;
     print(isBackloop);
     if (isEven and isBackloop) then

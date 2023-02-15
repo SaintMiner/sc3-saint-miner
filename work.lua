@@ -28,6 +28,3 @@ function worker()
 end
 
 parallel.waitForAny(worker);
--- pastebin get GeyZeZqr work.lua
--- pastebin get x8p1FhQU miner.lua
--- pastebin get XyeUnPJK startup.lua
